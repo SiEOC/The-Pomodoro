@@ -12,6 +12,11 @@
 		34FB5C1F1A95A83100E3E2F8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FB5C1E1A95A83100E3E2F8 /* Images.xcassets */; };
 		34FB5C221A95A83100E3E2F8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34FB5C201A95A83100E3E2F8 /* LaunchScreen.xib */; };
 		34FB5C2E1A95A83200E3E2F8 /* The_Pomodoro_iOS8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB5C2D1A95A83200E3E2F8 /* The_Pomodoro_iOS8Tests.m */; };
+		9FC5FD7D1B01503D005A7065 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5FD7B1B01503D005A7065 /* TimerViewController.m */; };
+		9FC5FD7E1B01503D005A7065 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC5FD7C1B01503D005A7065 /* TimerViewController.xib */; };
+		9FC5FD811B01505E005A7065 /* RoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5FD801B01505E005A7065 /* RoundsViewController.m */; };
+		9FC5FD8A1B015CB1005A7065 /* RoundsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5FD891B015CB1005A7065 /* RoundsController.m */; };
+		9FC5FD8D1B015F26005A7065 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5FD8C1B015F26005A7065 /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,15 @@
 		34FB5C271A95A83100E3E2F8 /* The-Pomodoro-iOS8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The-Pomodoro-iOS8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FB5C2C1A95A83200E3E2F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34FB5C2D1A95A83200E3E2F8 /* The_Pomodoro_iOS8Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_Pomodoro_iOS8Tests.m; sourceTree = "<group>"; };
+		9FC5FD7A1B01503D005A7065 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		9FC5FD7B1B01503D005A7065 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		9FC5FD7C1B01503D005A7065 /* TimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
+		9FC5FD7F1B01505E005A7065 /* RoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsViewController.h; sourceTree = "<group>"; };
+		9FC5FD801B01505E005A7065 /* RoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsViewController.m; sourceTree = "<group>"; };
+		9FC5FD881B015CB1005A7065 /* RoundsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundsController.h; sourceTree = "<group>"; };
+		9FC5FD891B015CB1005A7065 /* RoundsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundsController.m; sourceTree = "<group>"; };
+		9FC5FD8B1B015F26005A7065 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		9FC5FD8C1B015F26005A7065 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +92,17 @@
 			children = (
 				34FB5C151A95A83100E3E2F8 /* AppDelegate.h */,
 				34FB5C161A95A83100E3E2F8 /* AppDelegate.m */,
+				9FC5FD7A1B01503D005A7065 /* TimerViewController.h */,
+				9FC5FD7B1B01503D005A7065 /* TimerViewController.m */,
+				9FC5FD7C1B01503D005A7065 /* TimerViewController.xib */,
+				9FC5FD7F1B01505E005A7065 /* RoundsViewController.h */,
+				9FC5FD801B01505E005A7065 /* RoundsViewController.m */,
+				9FC5FD881B015CB1005A7065 /* RoundsController.h */,
+				9FC5FD891B015CB1005A7065 /* RoundsController.m */,
+				9FC5FD8B1B015F26005A7065 /* Timer.h */,
+				9FC5FD8C1B015F26005A7065 /* Timer.m */,
 				34FB5C1E1A95A83100E3E2F8 /* Images.xcassets */,
 				34FB5C201A95A83100E3E2F8 /* LaunchScreen.xib */,
-				34FB5C111A95A83100E3E2F8 /* Supporting Files */,
 			);
 			path = "The-Pomodoro-iOS8";
 			sourceTree = "<group>";
@@ -92,12 +114,14 @@
 				34FB5C131A95A83100E3E2F8 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = "../The-Pomodoro-iOS8";
 			sourceTree = "<group>";
 		};
 		34FB5C2A1A95A83100E3E2F8 /* The-Pomodoro-iOS8Tests */ = {
 			isa = PBXGroup;
 			children = (
 				34FB5C2D1A95A83200E3E2F8 /* The_Pomodoro_iOS8Tests.m */,
+				34FB5C111A95A83100E3E2F8 /* Supporting Files */,
 				34FB5C2B1A95A83200E3E2F8 /* Supporting Files */,
 			);
 			path = "The-Pomodoro-iOS8Tests";
@@ -191,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC5FD7E1B01503D005A7065 /* TimerViewController.xib in Resources */,
 				34FB5C221A95A83100E3E2F8 /* LaunchScreen.xib in Resources */,
 				34FB5C1F1A95A83100E3E2F8 /* Images.xcassets in Resources */,
 			);
@@ -210,8 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC5FD7D1B01503D005A7065 /* TimerViewController.m in Sources */,
 				34FB5C171A95A83100E3E2F8 /* AppDelegate.m in Sources */,
 				34FB5C141A95A83100E3E2F8 /* main.m in Sources */,
+				9FC5FD8D1B015F26005A7065 /* Timer.m in Sources */,
+				9FC5FD8A1B015CB1005A7065 /* RoundsController.m in Sources */,
+				9FC5FD811B01505E005A7065 /* RoundsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +423,7 @@
 				34FB5C331A95A83200E3E2F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34FB5C341A95A83200E3E2F8 /* Build configuration list for PBXNativeTarget "The-Pomodoro-iOS8Tests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +432,7 @@
 				34FB5C361A95A83200E3E2F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
