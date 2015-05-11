@@ -27,10 +27,7 @@
     return sharedInstance;
 }
 
--(bool)isOn
-{
-    
-}
+
 
 
 - (void)decreaseSecond
