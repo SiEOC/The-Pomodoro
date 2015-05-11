@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Timer : NSObject
-
+@property (nonatomic, assign) NSInteger minutes;
+@property (nonatomic, assign) NSInteger seconds;
 
 
 + (instancetype)sharedInstance;
