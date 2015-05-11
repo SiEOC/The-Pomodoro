@@ -8,6 +8,12 @@
 
 #import "Timer.h"
 
+@interface Timer()
+
+@property (nonatomic, assign)BOOL isOn;
+
+
+@end
 @implementation Timer
 
 
@@ -21,6 +27,57 @@
     return sharedInstance;
 }
 
+-(bool)isOn
+{
+    
+}
+
+
+- (void)decreaseSecond
+{
+    if (self.seconds > 0) {
+        self.seconds--;
+        [[NSNotificationCenter defaultCenter] postNotificationName:SecondTickNotification object:nil];
+    }
+    else if (self.seconds == 0 && self.minutes > 0){
+        self.minutes--;
+        self.seconds = 59;
+        [[NSNotificationCenter defaultCenter]postNotificationName:SecondTickNotification object:nil];
+    }
+    else
+    {
+        [self endTimer];
+    }
+}
+
+-(void)checkActive
+{
+    if (self.isOn) {
+        [self decreaseSecond];
+        [self performSelector:@selector(checkActive) withObject:nil afterDelay:1.0];
+    }
+}
+
+- (void)startTimer;
+{
+    self.isOn = YES;
+    [self checkActive];
+}
+
+-(void)cancelTimer
+{
+    self.isOn = NO;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+}
+
+// is on to NO
+- (void)endTimer
+{
+    self.isOn = NO;
+    [[NSNotificationCenter defaultCenter]postNotificationName:SecondTickNotification object:nil];
+    
+    
+}
 
 
 @end
