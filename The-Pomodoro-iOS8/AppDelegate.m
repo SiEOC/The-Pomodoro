@@ -22,8 +22,6 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    // MAking new and init timer view controller and will do round view controller
-    
     TimerViewController *timerVC = [[TimerViewController alloc]init];
     
     timerVC.tabBarItem.title = @"Timer";
@@ -33,12 +31,10 @@
     UINavigationController *roundsNavController = [[UINavigationController alloc]initWithRootViewController:roundsVC];
     
     roundsNavController.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"Rounds" image:[UIImage imageNamed:@"boxing.png"] tag:1];
-    // create a tab bar controller
-    UITabBarController  *tabBarController = [[UITabBarController alloc]init];
-    // call on two objcts from classes to be part of the tab bar controller.
-    tabBarController.viewControllers = @[timerVC, roundsNavController];
-    
    
+    UITabBarController  *tabBarController = [[UITabBarController alloc]init];
+    
+    tabBarController.viewControllers = @[timerVC, roundsNavController];
     
     self.window.rootViewController = tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];

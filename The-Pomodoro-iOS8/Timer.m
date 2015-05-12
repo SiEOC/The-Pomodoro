@@ -27,7 +27,11 @@
     return sharedInstance;
 }
 
-
+- (void)endTimer
+{
+    self.isOn = NO;
+    [[NSNotificationCenter defaultCenter]postNotificationName:SecondTickNotification object:nil];
+}
 
 
 - (void)decreaseSecond
@@ -47,12 +51,11 @@
     }
 }
 
--(void)checkActive
+
+-(void)cancelTimer
 {
-    if (self.isOn) {
-        [self decreaseSecond];
-        [self performSelector:@selector(checkActive) withObject:nil afterDelay:1.0];
-    }
+    self.isOn = NO;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 - (void)startTimer;
@@ -61,19 +64,12 @@
     [self checkActive];
 }
 
--(void)cancelTimer
+-(void)checkActive
 {
-    self.isOn = NO;
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
-}
-
-// is on to NO
-- (void)endTimer
-{
-    self.isOn = NO;
-    [[NSNotificationCenter defaultCenter]postNotificationName:SecondTickNotification object:nil];
-    
-    
+    if (self.isOn) {
+        [self decreaseSecond];
+        [self performSelector:@selector(checkActive) withObject:nil afterDelay:1.0];
+    }
 }
 
 

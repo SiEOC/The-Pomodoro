@@ -10,6 +10,7 @@
 #import "Timer.h"
 
 @interface TimerViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *timerButton;
 
@@ -37,6 +38,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)dealloc
+{
+    [self unregisterForNotifications];
+}
+
 - (IBAction)timerButtonPressed:(UIButton *)sender
 {
     self.timerButton.enabled = NO;
@@ -56,13 +62,7 @@
     
 }
 
--(void)dealloc
-{
-    [self unregisterForNotifications];
-}
 
-
-  // becuae not public
 - (void)updateTimerLabel
 {
     NSInteger minutes = [Timer sharedInstance].minutes;
