@@ -41,4 +41,9 @@
     return @[@25,@5,@25,@5,@25,@5,@25,@15];
 }
 
++ (NSArray *)imageNames
+{
+    return @[@"Running", @"Football", @"Running", @"Football", @"Running", @"Football", @"Running", @"Sleeping"];
+}
+
 @end

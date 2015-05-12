@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TimerViewController.h"
 #import "RoundsViewController.h"
+#import "AppearanceManager.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    [AppearanceManager setUpDefaultAppearance];
+    
     TimerViewController *timerVC = [[TimerViewController alloc]init];
     
     timerVC.tabBarItem.title = @"Timer";
@@ -29,6 +32,7 @@
     
     RoundsViewController *roundsVC =[[RoundsViewController alloc]init];
     UINavigationController *roundsNavController = [[UINavigationController alloc]initWithRootViewController:roundsVC];
+    
     
     roundsNavController.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"Rounds" image:[UIImage imageNamed:@"boxing.png"] tag:1];
    

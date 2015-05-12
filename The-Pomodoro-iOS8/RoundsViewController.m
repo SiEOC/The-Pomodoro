@@ -9,6 +9,7 @@
 #import "RoundsViewController.h"
 #import "RoundsController.h"
 #import "Timer.h"
+#
 
 static NSString *reuseID = @"reuseID";
 
@@ -33,6 +34,8 @@ static NSString *reuseID = @"reuseID";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Rounds";
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -47,7 +50,7 @@ static NSString *reuseID = @"reuseID";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [RoundsController sharedInstance].currentRound = indexPath.row;
     [[RoundsController sharedInstance] roundSelected];
     [[Timer sharedInstance] cancelTimer];
@@ -59,7 +62,10 @@ static NSString *reuseID = @"reuseID";
     NSArray *roundsArray = [RoundsController sharedInstance].roundTimes;
     NSNumber *minutes = roundsArray [indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%li minutes", (long)[minutes integerValue]];
+    cell.imageView.image = [UIImage imageNamed:[RoundsController imageNames][indexPath.row]];
+    
     return cell;
+    
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

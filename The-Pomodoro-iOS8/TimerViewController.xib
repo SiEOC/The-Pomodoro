@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimerViewController">
@@ -16,16 +17,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNr-4A-FFV" userLabel="Timer Label">
-                    <rect key="frame" x="279" y="152" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNr-4A-FFV" userLabel="Timer Label">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="72"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UW8-La-BgK" userLabel="Timer Button">
-                    <rect key="frame" x="229" y="351" width="142" height="30"/>
+                    <rect key="frame" x="230" y="389" width="140" height="43"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="142" id="AKo-h7-5It"/>
+                        <constraint firstAttribute="height" constant="43" id="YiN-hj-yBR"/>
+                        <constraint firstAttribute="width" constant="140" id="ih3-D7-dxm"/>
                     </constraints>
                     <state key="normal" title="Start Timer">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,9 +39,12 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="UW8-La-BgK" secondAttribute="bottom" constant="219" id="Xgv-hi-drs"/>
-                <constraint firstItem="UW8-La-BgK" firstAttribute="centerX" secondItem="jNr-4A-FFV" secondAttribute="centerX" id="e5o-Hy-6Dl"/>
-                <constraint firstItem="UW8-La-BgK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="osg-e5-UDO"/>
+                <constraint firstAttribute="trailing" secondItem="jNr-4A-FFV" secondAttribute="trailing" id="3ae-nx-wdh"/>
+                <constraint firstAttribute="bottom" secondItem="UW8-La-BgK" secondAttribute="bottom" constant="168" id="CdI-o9-lKl"/>
+                <constraint firstItem="jNr-4A-FFV" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" constant="8" id="F24-rr-KPI"/>
+                <constraint firstItem="jNr-4A-FFV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="HKM-9U-Tz7"/>
+                <constraint firstItem="jNr-4A-FFV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SkD-m0-dbQ"/>
+                <constraint firstItem="UW8-La-BgK" firstAttribute="centerX" secondItem="jNr-4A-FFV" secondAttribute="centerX" id="Xeg-QM-B1w"/>
             </constraints>
         </view>
     </objects>
