@@ -35,7 +35,7 @@ static NSString *reuseID = @"reuseID";
     [super viewDidLoad];
     
     self.title = @"Rounds";
-    
+    [self registerForNotifications];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -80,9 +80,10 @@ static NSString *reuseID = @"reuseID";
 
 -(void)roundComplete
 {
-    if ([RoundsController sharedInstance].currentRound < [RoundsController sharedInstance].roundTimes.count-1) {
+    if ([RoundsController sharedInstance].currentRound < [RoundsController sharedInstance].roundTimes.count -1) {
         [RoundsController sharedInstance].currentRound++;
         [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[RoundsController sharedInstance].currentRound inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundNotification object:nil];
     }
     else
     {

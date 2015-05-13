@@ -9,6 +9,7 @@
 #import "Timer.h"
 @import UIKit;
 
+
 @interface Timer()
 
 @property (nonatomic, assign)BOOL isOn;
@@ -17,6 +18,7 @@
 
 @end
 @implementation Timer
+
 
 
 + (Timer *)sharedInstance {
@@ -32,7 +34,7 @@
 - (void)endTimer
 {
     self.isOn = NO;
-    [[NSNotificationCenter defaultCenter]postNotificationName:SecondTickNotification object:nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:TimerCompleteNotification object:nil];
 }
 
 
@@ -88,5 +90,20 @@
     }
 }
 
+- (void)prepareForBackground
+{
+    [[NSUserDefaults standardUserDefaults] setObject:self.expirationDate forKey:expirationKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+  
+}
+
+- (void)loadFromBackground
+{
+    self.expirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:expirationKey];
+    NSTimeInterval seconds = [self.expirationDate timeIntervalSinceNow];
+    self.minutes = seconds / 60;
+    self.seconds = seconds - (self.minutes * 60);
+   
+}
 
 @end

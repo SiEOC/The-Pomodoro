@@ -11,6 +11,8 @@
 static NSString *SecondTickNotification = @"secondTickNotification";
 static NSString *TimerCompleteNotification = @"timerCompleteNotification";
 static NSString *NewRoundNotification = @"newRoundNotification";
+static NSString *expirationKey = @"expiration";
+
 @interface Timer : NSObject
 
 @property (nonatomic, assign) NSInteger minutes;
@@ -20,5 +22,8 @@ static NSString *NewRoundNotification = @"newRoundNotification";
 
 - (void)startTimer;
 - (void)cancelTimer;
+- (void)prepareForBackground;
+- (void)loadFromBackground;
+
 
 @end
