@@ -7,10 +7,12 @@
 //
 
 #import "Timer.h"
+@import UIKit;
 
 @interface Timer()
 
 @property (nonatomic, assign)BOOL isOn;
+@property (strong, nonatomic) NSDate *expirationDate;
 
 
 @end
@@ -56,11 +58,25 @@
 {
     self.isOn = NO;
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 - (void)startTimer;
 {
     self.isOn = YES;
+    
+    NSTimeInterval timerLength = self.minutes * 60 + self.seconds;
+    self.expirationDate = [NSDate dateWithTimeIntervalSinceNow:timerLength];
+    
+    UILocalNotification *timerExpiredNotification = [UILocalNotification new];
+    
+    timerExpiredNotification.fireDate = self.expirationDate;
+    timerExpiredNotification.timeZone = [NSTimeZone defaultTimeZone];
+    timerExpiredNotification.soundName = UILocalNotificationDefaultSoundName;
+    timerExpiredNotification.alertBody = @"Rounds Complete sucka! Up for anotha?";
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:timerExpiredNotification];
+    
     [self checkActive];
 }
 
